@@ -180,7 +180,7 @@ function! echodoc#util#parse_funcs(text, filetype) abort
       elseif p == 0
         " Opening parenthesis
         let func_i = match(text[:i - 1], '\S', comma)
-        let func_name = matchstr(text[func_i :i - 1], '\k\+$')
+        let func_name = matchstr(text[func_i :i - 1], '\k\+ *$')
 
         if func_i != -1 && func_i < i - 1 && func_name != ''
           let ppos = 0
